@@ -1,0 +1,23 @@
+/* bugSolution.css */
+/* Correcting missing spaces */
+.element {
+  width: calc(100% - 10px);
+}
+
+/* Correcting incompatible units (or better approach) */
+.anotherElement {
+  height: calc(100px + 20px); /* using same unit */
+  /* Alternative using variables or separate declarations for better maintainability and clarity*/
+  --base-height: 100px;
+  --extra-height: 2em;
+  height: calc(var(--base-height) + var(--extra-height));
+}
+
+/* More robust approach using only one unit or converting units*/
+.anotherElement-robust {
+  height: calc(100px + 20px);/*same unit*/
+}
+.yetAnotherElement {
+  /*Converting em to px -  this requires additional javascript or preprocessor if you don't know the exact em-to-px ratio*/
+  height:calc(100px + (2 * 16)px); /* Assuming 16px per 1em, Adjust as needed */
+}
